@@ -1,8 +1,14 @@
-# Product Php Codeigniter
+# Boilerplate Project: Product 
+# Technology: Php Codeigniter
+## Feature
+> Build with Php Codeigniter framework
+> JWT Token
+> Password BCrypt
+> Bulk Insertion
 
 # Database
 ```javascript
-CREATE TABLE IF NOT EXISTS *`user`* (
+CREATE TABLE IF NOT EXISTS **`user`** (
     `id` int NOT NULL AUTO_INCREMENT,
     `mobile` varchar(15) NOT NULL,
     `password_hash` text,
@@ -13,7 +19,7 @@ CREATE TABLE IF NOT EXISTS *`user`* (
 ```
 
 ```javascript
-CREATE TABLE IF NOT EXISTS *`products`* (
+CREATE TABLE IF NOT EXISTS **`products`** (
     `id` int NOT NULL AUTO_INCREMENT,
     `name` varchar(100) NOT NULL,
     `price` decimal(18,2) NOT NULL,
@@ -23,7 +29,7 @@ CREATE TABLE IF NOT EXISTS *`products`* (
 ```
 
 ```javascript
-CREATE TABLE IF NOT EXISTS *`order_master`* (
+CREATE TABLE IF NOT EXISTS **`order_master`** (
     `id` int NOT NULL AUTO_INCREMENT,
     `mobile` int NOT NULL,
     `addr` text NOT NULL,
@@ -33,7 +39,7 @@ CREATE TABLE IF NOT EXISTS *`order_master`* (
 ```
 
 ```javascript
-CREATE TABLE IF NOT EXISTS *`order_list`* (
+CREATE TABLE IF NOT EXISTS **`order_list`** (
     `id` int NOT NULL AUTO_INCREMENT,
     `order_id` int NOT NULL,
     `product_id` int NOT NULL,
