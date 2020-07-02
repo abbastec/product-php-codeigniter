@@ -1,6 +1,7 @@
 # Product Php Codeigniter
 
 # Database
+```javascript
 CREATE TABLE IF NOT EXISTS *`user`* (
     `id` int NOT NULL AUTO_INCREMENT,
     `mobile` varchar(15) NOT NULL,
@@ -9,7 +10,9 @@ CREATE TABLE IF NOT EXISTS *`user`* (
     `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=1;
+```
 
+```javascript
 CREATE TABLE IF NOT EXISTS *`products`* (
     `id` int NOT NULL AUTO_INCREMENT,
     `name` varchar(100) NOT NULL,
@@ -17,7 +20,9 @@ CREATE TABLE IF NOT EXISTS *`products`* (
     `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=1;
+```
 
+```javascript
 CREATE TABLE IF NOT EXISTS *`order_master`* (
     `id` int NOT NULL AUTO_INCREMENT,
     `mobile` int NOT NULL,
@@ -25,7 +30,9 @@ CREATE TABLE IF NOT EXISTS *`order_master`* (
     `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=1;
+```
 
+```javascript
 CREATE TABLE IF NOT EXISTS *`order_list`* (
     `id` int NOT NULL AUTO_INCREMENT,
     `order_id` int NOT NULL,
@@ -35,6 +42,7 @@ CREATE TABLE IF NOT EXISTS *`order_list`* (
     `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=1;
+```
 
 ## ADMIN API 01:
 GET: http://localhost/product/index.php/api/product
