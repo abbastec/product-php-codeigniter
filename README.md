@@ -1,4 +1,5 @@
-# Boilerplate Project: Product 
+# Project: Product Order Management
+# Type: Boilerplate
 # Technology: Php Codeigniter
 ## Feature
 
