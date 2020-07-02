@@ -1,6 +1,42 @@
-# product-php-codeigniter
+# Product Php Codeigniter
 
-##ADMIN API 01:
+# Database
+CREATE TABLE IF NOT EXISTS *`user`* (
+    `id` int NOT NULL AUTO_INCREMENT,
+    `mobile` varchar(15) NOT NULL,
+    `password_hash` text,
+    `product_salt` text,
+    `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=1;
+
+CREATE TABLE IF NOT EXISTS *`products`* (
+    `id` int NOT NULL AUTO_INCREMENT,
+    `name` varchar(100) NOT NULL,
+    `price` decimal(18,2) NOT NULL,
+    `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=1;
+
+CREATE TABLE IF NOT EXISTS *`order_master`* (
+    `id` int NOT NULL AUTO_INCREMENT,
+    `mobile` int NOT NULL,
+    `addr` text NOT NULL,
+    `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=1;
+
+CREATE TABLE IF NOT EXISTS *`order_list`* (
+    `id` int NOT NULL AUTO_INCREMENT,
+    `order_id` int NOT NULL,
+    `product_id` int NOT NULL,
+    `price` decimal(18,2) NOT NULL,
+    `qty` int NOT NULL,
+    `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=1;
+
+## ADMIN API 01:
 GET: http://localhost/product/index.php/api/product
 
 :Header:
@@ -23,7 +59,7 @@ GET: http://localhost/product/index.php/api/product
     ]
 }
 
-##ADMIN API 02:
+## ADMIN API 02:
 POST: http://localhost/product/index.php/api/product
 
 :Header:
@@ -45,7 +81,7 @@ POST: http://localhost/product/index.php/api/product
     "message": "Product number already exists"
 }
 
-##ADMIN API 03:
+## ADMIN API 03:
 GET: api/product/orderlistall
 
 :Header:
@@ -78,7 +114,7 @@ GET: api/product/orderlistall
     ]
 }
 
-##USER API 01:
+## USER API 01:
 GET: api/register
 
 :Header:
@@ -98,7 +134,7 @@ GET: api/register
     "message": "Mobile number already exists"
 }
 
-##USER API 02:
+## USER API 02:
 GET: api/login
 
 :Header:
@@ -121,7 +157,7 @@ GET: api/login
   "exp": 1593676604
 }
 
-##USER API 03:
+## USER API 03:
 GET: api/product/placeorder
 
 :Header:
