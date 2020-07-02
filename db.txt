@@ -1,0 +1,39 @@
+drop table user;
+drop table products;
+drop table order_master;
+drop table order_list;
+
+CREATE TABLE IF NOT EXISTS `user` (
+    `id` int NOT NULL AUTO_INCREMENT,
+    `mobile` varchar(15) NOT NULL,
+    `password_hash` text,
+    `product_salt` text,
+    `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=1;
+
+CREATE TABLE IF NOT EXISTS `products` (
+    `id` int NOT NULL AUTO_INCREMENT,
+    `name` varchar(100) NOT NULL,
+    `price` decimal(18,2) NOT NULL,
+    `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=1;
+
+CREATE TABLE IF NOT EXISTS `order_master` (
+    `id` int NOT NULL AUTO_INCREMENT,
+    `mobile` int NOT NULL,
+    `addr` text NOT NULL,
+    `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=1;
+
+CREATE TABLE IF NOT EXISTS `order_list` (
+    `id` int NOT NULL AUTO_INCREMENT,
+    `order_id` int NOT NULL,
+    `product_id` int NOT NULL,
+    `price` decimal(18,2) NOT NULL,
+    `qty` int NOT NULL,
+    `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=1;
