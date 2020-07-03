@@ -60,7 +60,11 @@ CREATE TABLE IF NOT EXISTS `order_list` (
 GET: http://localhost/product/index.php/api/product
 
 :Header:
-
+```javascript
+{
+	"Content-Type": "application/json"
+}
+```
 
 :Request:
 
@@ -85,7 +89,11 @@ GET: http://localhost/product/index.php/api/product
 POST: http://localhost/product/index.php/api/product
 
 :Header:
-
+```javascript
+{
+	"Content-Type": "application/json"
+}
+```
 
 :Request:
 ```javascript
@@ -114,7 +122,11 @@ POST: http://localhost/product/index.php/api/product
 GET: api/product/orderlistall
 
 :Header:
-
+```javascript
+{
+	"Content-Type": "application/json"
+}
+```
 
 :Request:
 
@@ -149,7 +161,11 @@ GET: api/product/orderlistall
 GET: api/register
 
 :Header:
-
+```javascript
+{
+	"Content-Type": "application/json"
+}
+```
 
 :Request:
 ```javascript
@@ -176,7 +192,11 @@ GET: api/register
 GET: api/login
 
 :Header:
-
+```javascript
+{
+	"Content-Type": "application/json"
+}
+```
 
 :Request:
 ```javascript
@@ -187,7 +207,7 @@ GET: api/login
 ```javascript
 {
     "status": "1",
-    "token": "..."
+    "token": "jwt token..."
     "message": "Login successful"
 }
 ```
@@ -205,7 +225,12 @@ GET: api/login
 GET: api/product/placeorder
 
 :Header:
-Authorization: [token]
+```javascript
+{
+	"Content-Type": "application/json"
+	"Authorization": "jwt token..."
+}
+```
 
 :Request:
 ```javascript
