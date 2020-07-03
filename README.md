@@ -260,5 +260,4 @@ GET: api/product/placeorder
 
 ### Credit
 ##### Found in Youtube 
-**Channel Name**: [Online Web Tutor](https://www.youtube.com/channel/UCB2flCo-gW6RhpVVXySqcMg)
-[Playlist](https://www.youtube.com/playlist?list=PLT9miexWCpPWKV83pCHGAIIg2lSBHQa9q)
+**Channel Name**: [Online Web Tutor](https://www.youtube.com/channel/UCB2flCo-gW6RhpVVXySqcMg) . [Playlist](https://www.youtube.com/playlist?list=PLT9miexWCpPWKV83pCHGAIIg2lSBHQa9q)
