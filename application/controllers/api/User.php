@@ -18,8 +18,8 @@ class User extends REST_Controller{
   public function register_post(){
     $data = json_decode(file_get_contents("php://input"));
 
-    $mobile = isset($data->mobile) ? $data->mobile : "";
-    $password = isset($data->password) ? $data->password : "";
+    $mobile = isset($data->mobile) ? html_escape($data->mobile) : "";
+    $password = isset($data->password) ? html_escape($data->password) : "";
 
       if(!empty($mobile) && !empty($password)){
         // all values are available
@@ -54,8 +54,8 @@ class User extends REST_Controller{
   public function login_post(){
     $data = json_decode(file_get_contents("php://input"));
 
-    $mobile = isset($data->mobile) ? $data->mobile : "";
-    $password = isset($data->password) ? $data->password : "";
+    $mobile = isset($data->mobile) ? html_escape($data->mobile) : "";
+    $password = isset($data->password) ? html_escape($data->password) : "";
 
       if(!empty($mobile) && !empty($password)){
         $user = $this->user_model->get_user($mobile);
@@ -98,11 +98,52 @@ class User extends REST_Controller{
 
   public function placeorder_post() 
   {
-
         $token = $this->input->get_request_header('Authorization');
+        $data = json_decode(file_get_contents("php://input"));
+
         if($token) {
-            $decode = JWT::decode($token, "my secret key", array('HS256'));
-            print_r($decode);
+          $decode = JWT::decode($token, "my secret key", array('HS256'));
+          $mobile = $decode->mobile;
+
+          //$addr = isset($data->addr) ? htmlspecialchars(strip_tags($data->addr)) : "";
+          $addr = isset($data->addr) ? html_escape($data->addr) : "";
+          
+          $order_list = $data->list;
+
+          $order_master = array(
+            "mobile" => $mobile,
+            "addr" => $addr
+          );
+          
+          try {
+            $this->user_model->BeginTransaction();
+            $order_id = $this->user_model->order_master($order_master); 
+            for ($x = 0; $x < count($order_list); $x++) {
+              $list = array(
+                "order_id" => $order_id,
+                "product_id" => html_escape($order_list[$x]->id),
+                "price" => html_escape($order_list[$x]->price),
+                "qty" => html_escape($order_list[$x]->qty),
+              );
+
+              if(!$this->user_model->order_list($list)) {
+                $error = true;
+              }
+            }
+          } catch(Exception $e) {
+            $this->user_model->RollbackTransaction();
+            $this->response(array(
+              "status" => 0,
+              "message" => "Failed to place order"
+            ), REST_Controller::HTTP_INTERNAL_SERVER_ERROR);
+            return;
+          }
+            
+          $this->user_model->CommitTransaction();
+          $this->response(array(
+              "status" => 1,
+              "message" => "Order placed successful"
+          ), REST_Controller::HTTP_OK);
         } else {
             $this->response(array(
                 "status" => 0,

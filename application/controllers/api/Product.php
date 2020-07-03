@@ -38,8 +38,8 @@ class Product extends REST_Controller{
   public function index_post(){
     $data = json_decode(file_get_contents("php://input"));
 
-    $name = isset($data->name) ? $data->name : "";
-    $price = isset($data->price) ? $data->price : "";
+    $name = isset($data->name) ? html_escape($data->name) : "";
+    $price = isset($data->price) ? html_escape($data->price) : "";
 
       if(!empty($name) && !empty($price)){
         // all values are available
@@ -68,6 +68,26 @@ class Product extends REST_Controller{
         ), REST_Controller::HTTP_NOT_FOUND);
       }
     
+  }
+
+  public function orderlistall_get(){
+    $orders = $this->product_model->get_orderListAll();
+
+    if(count($orders) > 0){
+
+      $this->response(array(
+        "status" => 1,
+        "message" => "Orders found",
+        "data" => $orders
+      ), REST_Controller::HTTP_OK);
+    }else{
+
+      $this->response(array(
+        "status" => 0,
+        "message" => "No Order found",
+        "data" => $orders
+      ), REST_Controller::HTTP_NOT_FOUND);
+    }
   }
 }
 
