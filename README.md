@@ -1,7 +1,13 @@
-# Project: Product Order Management
-# Type: Boilerplate
-# Technology: Php Codeigniter
-## Feature
+## Project: Simple Order Management [Boilerplate Code]
+## Technology: Php Codeigniter
+
+### Table of Content
+* Feature
+* Database
+* API End Point
+* Credit
+
+### Feature
 
 > Build with Php Codeigniter framework
 
@@ -12,7 +18,7 @@
 > Bulk Insertion
 
 
-# Database
+### Database
 ```javascript
 CREATE TABLE IF NOT EXISTS `user` (
     `id` int NOT NULL AUTO_INCREMENT,
@@ -55,8 +61,8 @@ CREATE TABLE IF NOT EXISTS `order_list` (
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=1;
 ```
-
-## ADMIN API 01:
+### API End Point
+#### ADMIN API 01:
 GET: http://localhost/product/index.php/api/product
 
 :Header:
@@ -85,7 +91,7 @@ GET: http://localhost/product/index.php/api/product
 }
 ```
 
-## ADMIN API 02:
+#### ADMIN API 02:
 POST: http://localhost/product/index.php/api/product
 
 :Header:
@@ -118,7 +124,7 @@ POST: http://localhost/product/index.php/api/product
 }
 ```
 
-## ADMIN API 03:
+#### ADMIN API 03:
 GET: api/product/orderlistall
 
 :Header:
@@ -157,7 +163,7 @@ GET: api/product/orderlistall
 }
 ```
 
-## USER API 01:
+#### USER API 01:
 GET: api/register
 
 :Header:
@@ -188,7 +194,7 @@ GET: api/register
 }
 ```
 
-## USER API 02:
+#### USER API 02:
 GET: api/login
 
 :Header:
@@ -221,7 +227,7 @@ GET: api/login
 }
 ```
 
-## USER API 03:
+#### USER API 03:
 GET: api/product/placeorder
 
 :Header:
@@ -251,3 +257,8 @@ GET: api/product/placeorder
     "message": "Order placed successful"
 }
 ```
+
+### Credit
+##### Found in Youtube 
+**Channel Name**: [Online Web Tutor](https://www.youtube.com/channel/UCB2flCo-gW6RhpVVXySqcMg)
+[Playlist](https://www.youtube.com/playlist?list=PLT9miexWCpPWKV83pCHGAIIg2lSBHQa9q)
