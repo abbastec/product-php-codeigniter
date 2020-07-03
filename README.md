@@ -2,12 +2,12 @@
 ## Technology: Php Codeigniter
 
 ### Table of Content
-* Feature
+* Features
 * Database
 * API End Point
 * Credit
 
-### Feature
+### Features
 
 > Build with Php Codeigniter framework
 
