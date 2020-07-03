@@ -62,7 +62,7 @@ GET: http://localhost/product/index.php/api/product
 :Header:
 ```javascript
 {
-	"Content-Type": "application/json"
+    "Content-Type": "application/json"
 }
 ```
 
@@ -91,7 +91,7 @@ POST: http://localhost/product/index.php/api/product
 :Header:
 ```javascript
 {
-	"Content-Type": "application/json"
+    "Content-Type": "application/json"
 }
 ```
 
@@ -124,7 +124,7 @@ GET: api/product/orderlistall
 :Header:
 ```javascript
 {
-	"Content-Type": "application/json"
+    "Content-Type": "application/json"
 }
 ```
 
@@ -163,7 +163,7 @@ GET: api/register
 :Header:
 ```javascript
 {
-	"Content-Type": "application/json"
+    "Content-Type": "application/json"
 }
 ```
 
@@ -194,7 +194,7 @@ GET: api/login
 :Header:
 ```javascript
 {
-	"Content-Type": "application/json"
+    "Content-Type": "application/json"
 }
 ```
 
@@ -227,8 +227,8 @@ GET: api/product/placeorder
 :Header:
 ```javascript
 {
-	"Content-Type": "application/json"
-	"Authorization": "jwt token..."
+    "Content-Type": "application/json"
+    "Authorization": "jwt token..."
 }
 ```
 
