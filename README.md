@@ -125,7 +125,7 @@ POST: http://localhost/product/index.php/api/product
 ```
 
 #### ADMIN API 03:
-GET: api/product/orderlistall
+GET: http://localhost/product/index.php/api/product/orderlistall
 
 :Header:
 ```javascript
@@ -164,7 +164,7 @@ GET: api/product/orderlistall
 ```
 
 #### USER API 01:
-GET: api/register
+GET: http://localhost/product/index.php/api/user/register
 
 :Header:
 ```javascript
@@ -195,7 +195,7 @@ GET: api/register
 ```
 
 #### USER API 02:
-GET: api/login
+GET: http://localhost/product/index.php/api/user/login
 
 :Header:
 ```javascript
@@ -228,7 +228,7 @@ GET: api/login
 ```
 
 #### USER API 03:
-GET: api/product/placeorder
+GET: http://localhost/product/index.php/api/user/placeorder
 
 :Header:
 ```javascript

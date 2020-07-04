@@ -16,6 +16,15 @@ class Product_model extends CI_Model{
     return $query->result();
   }
 
+  public function get_product_by_name($name){
+    $this->db->select("*");
+    $this->db->from("products");
+    $this->db->where("name", $name);
+    $query = $this->db->get();
+    
+    return $query->result();
+  }
+
   public function insert_product($data = array()) {
     return $this->db->insert("products", $data);
   }
