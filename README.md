@@ -5,6 +5,7 @@
 * Features
 * Database
 * API End Point
+* Sub Task
 * Credit
 
 ### Features
@@ -257,6 +258,15 @@ GET: http://localhost/product/index.php/api/user/placeorder
     "message": "Order placed successful"
 }
 ```
+
+### Sub Task
+- [x] Database Table
+- [x] API End Point
+- [x] Bulk Insert
+- [x] JWT Authentication
+- [x] Password BCrypt
+- [ ] Server-side Validation
+- [ ] Payment integration
 
 ### Credit
 ##### Found in Youtube 
